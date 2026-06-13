@@ -1,8 +1,9 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, ExternalLink } from 'lucide-react'
 import type { Project } from '../data/projects'
 import styles from './ProjectModal.module.css'
+import Lightbox from './Lightbox'
 
 interface Props {
   project: Project | null;
@@ -10,10 +11,15 @@ interface Props {
 }
 
 function ProjectModal({ project, onClose }: Props) {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(null)
+
   /* ESC tuşu ile kapatma */
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
+      // Lightbox açıksa modalın kendi ESC'sini iptal et (Lightbox kendi ESC'sini yakalayacak)
+      if (e.key === 'Escape' && selectedImageIndex === null) {
+        onClose()
+      }
     }
     if (project) {
       document.addEventListener('keydown', handleKey)
@@ -23,7 +29,12 @@ function ProjectModal({ project, onClose }: Props) {
       document.removeEventListener('keydown', handleKey)
       document.body.style.overflow = ''
     }
-  }, [project, onClose])
+  }, [project, onClose, selectedImageIndex])
+
+  // Modal kapandığında lightbox state'ini de sıfırla
+  useEffect(() => {
+    if (!project) setSelectedImageIndex(null)
+  }, [project])
 
   return (
     <AnimatePresence>
@@ -85,6 +96,7 @@ function ProjectModal({ project, onClose }: Props) {
                         alt={`${project.title} görsel ${i + 1}`}
                         className={styles.galleryImage}
                         loading="lazy"
+                        onClick={() => setSelectedImageIndex(i)}
                       />
                     ))}
                   </div>
@@ -109,6 +121,15 @@ function ProjectModal({ project, onClose }: Props) {
               )}
             </div>
           </motion.div>
+
+          {/* Lightbox (Tam Ekran Galeri) */}
+          {selectedImageIndex !== null && (
+            <Lightbox
+              images={project.images}
+              initialIndex={selectedImageIndex}
+              onClose={() => setSelectedImageIndex(null)}
+            />
+          )}
         </motion.div>
       )}
     </AnimatePresence>

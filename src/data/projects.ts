@@ -17,7 +17,15 @@ export const projects: Project[] = [
     description:
       'Web ve mobil platformda çalışan, gerçek zamanlı turnuva oluşturma, bracket yönetimi ve canlı skor takibi sunan full-stack uygulama. React ile web arayüzü, React Native ile mobil uygulama geliştirildi. Firebase altyapısı ile anlık veri senkronizasyonu sağlandı. Kullanıcılar turnuva oluşturabilir, katılımcı ekleyebilir ve bracket üzerinden eşleşmeleri yönetebilir.',
     technologies: ['React', 'React Native', 'TypeScript', 'Firebase', 'Expo'],
-    images: ['/images/projects/strivion/screenshot-1.png'],
+    images: [
+      '/images/projects/strivion/123.jpeg',
+      '/images/projects/strivion/1234.jpeg',
+      '/images/projects/strivion/12345.jpeg',
+      '/images/projects/strivion/Ekran görüntüsü 2026-06-13 172250.png',
+      '/images/projects/strivion/Ekran görüntüsü 2026-06-13 172308.png',
+      '/images/projects/strivion/Ekran görüntüsü 2026-06-13 172512.png',
+      '/images/projects/strivion/WhatsApp Image 2026-06-13 at 17.18.29.jpeg'
+    ],
     status: 'completed',
     githubUrl: 'https://github.com/barankaratas',
   },
@@ -39,7 +47,11 @@ export const projects: Project[] = [
     description:
       'Flutter ve Firebase ile geliştirilen, müşteri güven puanlama sistemi (Trust Score Engine) içeren araç kiralama mobil uygulaması. Clean Architecture ve BLoC pattern ile modüler yapıda tasarlandı. Araç listeleme, filtreleme, rezervasyon oluşturma, favori sistemi, profil yönetimi ve güven puanına göre araç erişim kontrolü özellikleri mevcut. 10 adımlık profesyonel bir roadmap ile geliştirilmektedir.',
     technologies: ['Flutter', 'Dart', 'Firebase', 'BLoC'],
-    images: ['/images/projects/carvia/screenshot-1.png'],
+    images: [
+      '/images/projects/carvia/Ekran görüntüsü 2026-06-13 170536.png',
+      '/images/projects/carvia/Ekran görüntüsü 2026-06-13 170637.png',
+      '/images/projects/carvia/Ekran görüntüsü 2026-06-13 170719.png'
+    ],
     status: 'in-progress',
     githubUrl: 'https://github.com/barankaratas',
   },

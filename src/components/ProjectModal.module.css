@@ -232,17 +232,22 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .backdrop {
-    padding: var(--spacing-md);
-    align-items: flex-end;
+    padding: 0;
+    align-items: flex-start;
   }
 
   .modal {
-    max-height: 90vh;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border: none;
   }
 
   .content {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-md);
   }
 
   .title {

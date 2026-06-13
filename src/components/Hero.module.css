@@ -1,0 +1,86 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 45vh;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  text-align: center;
+  position: relative;
+}
+
+/* ── Gradient arka plan parıltısı ── */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(6, 182, 212, 0.04) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── İsim ── */
+.name {
+  font-size: 3.25rem;
+  font-weight: 700;
+  color: var(--color-text-heading);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* ── Alt başlık ── */
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--color-text-body);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ── Gradient accent çizgi ── */
+.accentLine {
+  width: 80px;
+  height: 3px;
+  background: var(--color-gradient-cta);
+  border-radius: 2px;
+  margin: 0 auto;
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ── Kısa tanıtım ── */
+.bio {
+  max-width: 520px;
+  font-size: 0.95rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 35vh;
+    padding: var(--spacing-2xl) var(--spacing-md);
+  }
+
+  .name {
+    font-size: 2.25rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+}

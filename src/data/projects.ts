@@ -5,6 +5,7 @@ export interface Project {
   description: string;
   technologies: string[];
   images: string[];
+  videos?: string[];
   status: 'completed' | 'in-progress';
   githubUrl?: string;
 }
@@ -37,6 +38,11 @@ export const projects: Project[] = [
       'Unity ve C# kullanarak geliştirilen mini oyun koleksiyonu. Asteroid Shooter ile uzay temalı shooter mekanikleri, Match Royal ile match-3 puzzle mekanikleri uygulandı. Her oyun farklı bir konsept ve öğrenme hedefi içeriyor — fizik sistemi, çarpışma algılama, partikül efektleri, skor yönetimi ve UI tasarımı gibi temel oyun geliştirme konuları pratiğe döküldü.',
     technologies: ['Unity', 'C#', 'Game Design'],
     images: ['/images/projects/game-dev/screenshot-1.png'],
+    videos: [
+      '/images/projects/game-dev/WhatsApp Video 2026-06-13 at 18.06.09.mp4',
+      '/images/projects/game-dev/WhatsApp Video 2026-06-13 at 18.06.12.mp4',
+      '/images/projects/game-dev/WhatsApp Video 2026-06-13 at 18.06.13.mp4',
+    ],
     status: 'completed',
     githubUrl: 'https://github.com/barankaratas',
   },

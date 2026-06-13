@@ -107,6 +107,23 @@ function ProjectModal({ project, onClose }: Props) {
                 )}
               </div>
 
+              {/* Videolar */}
+              {project.videos && project.videos.length > 0 && (
+                <div className={styles.videoSection}>
+                  <h3>Oynanış Videoları</h3>
+                  <div className={styles.videoGallery}>
+                    {project.videos.map((vid, i) => (
+                      <video
+                        key={i}
+                        src={vid}
+                        controls
+                        className={styles.videoPlayer}
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {/* GitHub butonu */}
               {project.githubUrl && (
                 <a
